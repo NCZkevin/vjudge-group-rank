@@ -9,7 +9,7 @@ request.get(groupUrl)
            if(err) console.log(err);
            var $ = cheerio.load(res.text);
            var user = JSON.parse($('textarea').text());
-        //    console.log(user.memberBriefs);
+           console.log(user.memberBriefs);
            user.memberBriefs.forEach(function(element) {
                console.log(element.username);
            });
