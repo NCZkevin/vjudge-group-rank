@@ -1,4 +1,5 @@
 # vjudge-group-rank
 
-vjudge group每日刷题排名
-每周任务安排
+vjudge group
+- 每日刷题排名
+- 每周任务安排
