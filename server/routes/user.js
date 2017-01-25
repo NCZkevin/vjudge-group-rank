@@ -1,5 +1,5 @@
 import 'babel-polyfill'
-import User from '../models/city'
+import User from '../models/user'
 import Router from 'koa-router'
 import { baseApi,groupUrl } from '../config'
 import cheerio from  'cheerio'
@@ -16,27 +16,49 @@ router.prefix(`/${baseApi}/${api}`)
 // router.get('/',async(ctx) => 
 //     ctx.body = await User.find())
 
+//GET /api/user/daily
+router.get('/daily', async(ctx) => 
+  ctx.body = await User.find().sort('-day').select('username nickName day').exec(function(err,res){
+    if(err) console.log(err)
+  }));
+
+router.get('/week', async(ctx) => 
+  ctx.body = await User.find().sort('-week').select('username nickName week').exec(function(err,res){
+    if(err) console.log(err)
+  }));
+
+router.get('/month', async(ctx) => 
+  ctx.body = await User.find().sort('-month').select('username nickName month').exec(function(err,res){
+    if(err) console.log(err)
+  }));
+
+router.get('/allSovled', async(ctx) => 
+  ctx.body = await User.find().sort('-allSovled').select('username nickName allSovled').exec(function(err,res){
+    if(err) console.log(err)
+  }));
+
+
 // GET /api/city
 router.get('/', async(ctx) =>
   ctx.body = await User.find())
 
 // POST /api/city
 router.post('/', async(ctx) => {
-//   try {
-//     request.get(groupUrl)
-//     .end(function(err,res) {
-//         if(err) console.log(err);
-//         var $ = cheerio.load(res.text);
-//         var user = JSON.parse($('textarea').text());
-//         user.memberBriefs.forEach(function(element) {
-//             console.log(element.username);
-//             var member = {
-//                 username: element.username,
-//                 nickName: element.nickName,
-//             }
-//             const user =  new User(member).save();
-//         });
-//     });
+  try {
+    // request.get(groupUrl)
+    // .end(function(err,res) {
+    //     if(err) console.log(err);
+    //     var $ = cheerio.load(res.text);
+    //     var user = JSON.parse($('textarea').text());
+    //     user.memberBriefs.forEach(function(element) {
+    //         console.log(element.username);
+    //         var member = {
+    //             username: element.username,
+    //             nickName: element.nickName,
+    //         }
+    //         const user =  new User(member).save();
+    //     });
+    // });
     // const city = await new User(ctx.request.body).save()
     // ctx.body = city
   } catch (err) {

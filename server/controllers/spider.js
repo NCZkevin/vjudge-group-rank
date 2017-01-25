@@ -10,14 +10,12 @@ mongoose.connect('mongodb://127.0.0.1:27017/vjudge');
 var userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   nickName: String,
-  problems: [{
-    day: String,
-    week: String,
-    month: String,
-    allSovled: String,
-    allAttempted: String,
+    day: Number,
+    week: Number,
+    month: Number,
+    allSovled: Number,
+    allAttempted: Number,
     create_date: {type: Date,default: Date.now}
-  }]
 })
 
 var User = mongoose.model("User",userSchema);
@@ -42,14 +40,12 @@ request.get(groupUrl)
                     });
                     User.create({
                         username: element.username,
-                        nickName: element.nickName,
-                        problems: [{
-                            day: problems[0],
-                            week: problems[1],
-                            month: problems[2],
-                            allSovled: problems[3],
-                            allAttempted: problems[4]
-                        }]
+                        nickName: element.nickName,         
+                        day: problems[0],
+                        week: problems[1],
+                        month: problems[2],
+                        allSovled: problems[3],
+                        allAttempted: problems[4]
                     },function(err){
                         if(!err) {
                             console.log('saved');
