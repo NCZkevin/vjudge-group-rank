@@ -16,22 +16,25 @@ router.prefix(`/${baseApi}/${api}`)
 // router.get('/',async(ctx) => 
 //     ctx.body = await User.find())
 
-//GET /api/user/daily
+//GET /api/user/daily 每日题目
 router.get('/daily', async(ctx) => 
   ctx.body = await User.find().sort('-day').select('username nickName day').exec(function(err,res){
     if(err) console.log(err)
   }));
 
+//GET /api/user/week 每周题目
 router.get('/week', async(ctx) => 
   ctx.body = await User.find().sort('-week').select('username nickName week').exec(function(err,res){
     if(err) console.log(err)
   }));
 
+//GET /api/user/month 每月题目
 router.get('/month', async(ctx) => 
   ctx.body = await User.find().sort('-month').select('username nickName month').exec(function(err,res){
     if(err) console.log(err)
   }));
 
+//GET /api/user/allSovled 所有题目
 router.get('/allSovled', async(ctx) => 
   ctx.body = await User.find().sort('-allSovled').select('username nickName allSovled').exec(function(err,res){
     if(err) console.log(err)
