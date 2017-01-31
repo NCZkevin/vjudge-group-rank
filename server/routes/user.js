@@ -42,32 +42,32 @@ router.get('/allSovled', async(ctx) =>
 
 
 // GET /api/city
-router.get('/', async(ctx) =>
-  ctx.body = await User.find())
+// router.get('/', async(ctx) =>
+//   ctx.body = await User.find())
 
 // POST /api/city
-router.post('/', async(ctx) => {
-  try {
-    // request.get(groupUrl)
-    // .end(function(err,res) {
-    //     if(err) console.log(err);
-    //     var $ = cheerio.load(res.text);
-    //     var user = JSON.parse($('textarea').text());
-    //     user.memberBriefs.forEach(function(element) {
-    //         console.log(element.username);
-    //         var member = {
-    //             username: element.username,
-    //             nickName: element.nickName,
-    //         }
-    //         const user =  new User(member).save();
-    //     });
-    // });
-    // const city = await new User(ctx.request.body).save()
-    // ctx.body = city
-  } catch (err) {
-    ctx.throw(422)
-  }
-})
+// router.post('/', async(ctx) => {
+//   try {
+//     request.get(groupUrl)
+//     .end(function(err,res) {
+//         if(err) console.log(err);
+//         var $ = cheerio.load(res.text);
+//         var user = JSON.parse($('textarea').text());
+//         user.memberBriefs.forEach(function(element) {
+//             console.log(element.username);
+//             var member = {
+//                 username: element.username,
+//                 nickName: element.nickName,
+//             }
+//             const user =  new User(member).save();
+//         });
+//     });
+//     const city = await new User(ctx.request.body).save()
+//     ctx.body = city
+//   } catch (err) {
+//     ctx.throw(422)
+//   }
+// })
 
 // router.get('/:id', async(ctx) => {
 //   try {
