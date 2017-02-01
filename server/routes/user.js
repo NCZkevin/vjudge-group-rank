@@ -41,9 +41,9 @@ router.get('/allSovled', async(ctx) =>
   }));
 
 
-// GET /api/city
-// router.get('/', async(ctx) =>
-//   ctx.body = await User.find())
+GET /api/city
+router.get('/', async(ctx) =>
+  ctx.body = await User.find())
 
 // POST /api/city
 // router.post('/', async(ctx) => {
