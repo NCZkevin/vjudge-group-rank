@@ -40,6 +40,11 @@ router.get('/allSovled', async(ctx) =>
     if(err) console.log(err)
   }));
 
+//GET /api/content 所有比赛
+router.get('/content', async(ctx) => 
+  ctx.body = await User.find().sort('-allSovled').select('username nickName allSovled').exec(function(err,res){
+    if(err) console.log(err)
+  }));
 
 // GET /api/city
 // router.get('/', async(ctx) =>
