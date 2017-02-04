@@ -104,20 +104,6 @@ router.get('/content', async(ctx) =>
 //   }
 // })
 
-// router.delete('/:id', async(ctx) => {
-//   try {
-//     const city = await City.findByIdAndRemove(ctx.params.id)
-//     if (!city) {
-//       ctx.throw(404)
-//     }
-//     ctx.body = city
-//   } catch (err) {
-//     if (err.name === 'CastError' || err.name === 'NotFoundError') {
-//       ctx.throw(404)
-//     }
-//     ctx.throw(500)
-//   }
-// })
 
 /* eslint-enable no-unused-vars, no-param-reassign, new-cap */
 
