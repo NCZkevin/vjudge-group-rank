@@ -57,15 +57,3 @@ request.get(groupUrl)
            });
        });
 
-// request.get(userUrl)
-//        .end(function(err,res) {
-//            var $ = cheerio.load(res.text);
-//            var problems = [];
-//         //    var num = $('td').text();
-//         //    console.log(typeof(num));
-//            $('td').each(function(i,elem) {
-//                problems[i] = $(this).text();
-//             //    console.log(problems[i]);
-//            });
-//         //    console.log(problems);
-//        });
