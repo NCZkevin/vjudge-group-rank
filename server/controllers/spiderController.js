@@ -3,7 +3,7 @@ import { groupUrl, userUrl, connexionString} from './config'
 import cheerio from cheerio
 import superagent from superagent
 
-mongoose.connect(connexionString)
+// mongoose.connect(connexionString)
 
 superagent
     .get(groupUrl)
