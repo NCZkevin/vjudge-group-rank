@@ -1,5 +1,6 @@
 import bodyParser from 'koa-bodyparser'
 import Koa from 'koa'
+import serve from 'koa-static'
 import logger from 'koa-logger'
 import mongoose from 'mongoose'
 import restc from 'restc'
@@ -15,8 +16,9 @@ const app = new Koa()
 
 app
   .use(logger())
-  .use(restc.koa2())
+  // .use(restc.koa2())
   .use(bodyParser())
+  .use(serve(__dirname+ "/template/",{ extensions: ['html']}))
 
 routing(app)
 

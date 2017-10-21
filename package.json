@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "cheerio": "^0.22.0",
+    "koa-static": "^4.0.1",
     "superagent": "^3.3.2"
   }
 }
